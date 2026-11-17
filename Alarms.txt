@@ -1,0 +1,16 @@
+شفرة مورس
+
+function alarm(on){clearInterval(AL);AL=null;try{navigator.vibrate&&navigator.vibrate(0)}catch(e){}if(!on)return;let c;try{c=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}const t0=now();
+const tick=()=>{if(now()-t0>30000||!S.modal){alarm(false);return}if(c){c.resume&&c.resume();[[0,.08],[.15,.08],[.3,.08],[.5,.22],[.8,.22],[1.1,.22],[1.4,.08],[1.55,.08],[1.7,.08]].forEach(([d,l])=>{const o=c.createOscillator(),g=c.createGain(),t=c.currentTime+d;o.type="sine";o.frequency.value=850;g.gain.value=.8;o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+l)})}try{navigator.vibrate&&navigator.vibrate([100,80,100,80,100,150,250,100,250])}catch(e){}};tick();AL=setInterval(tick,2200)}
+
+
+Hi-Lo الأوربي
+
+function alarm(on){clearInterval(AL);AL=null;try{navigator.vibrate&&navigator.vibrate(0)}catch(e){}if(!on)return;let c;try{c=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}const t0=now();
+const tick=()=>{if(now()-t0>30000||!S.modal){alarm(false);return}if(c){c.resume&&c.resume();[[0,740],[.25,587],[.5,740],[.75,587]].forEach(([d,f])=>{const o=c.createOscillator(),g=c.createGain(),t=c.currentTime+d;o.type="sawtooth";o.frequency.value=f;g.gain.value=.65;o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.23)})}try{navigator.vibrate&&navigator.vibrate([250,100,250,100])}catch(e){}};tick();AL=setInterval(tick,1000)}
+
+
+ثقيل
+
+function alarm(on){clearInterval(AL);AL=null;try{navigator.vibrate&&navigator.vibrate(0)}catch(e){}if(!on)return;let c;try{c=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}const t0=now();
+const tick=()=>{if(now()-t0>30000||!S.modal){alarm(false);return}if(c){c.resume&&c.resume();[[0,320],[.35,320]].forEach(([d,f])=>{const o=c.createOscillator(),g=c.createGain(),t=c.currentTime+d;o.type="square";o.frequency.value=f;g.gain.value=.85;o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.25)})}try{navigator.vibrate&&navigator.vibrate([400,150,400])}catch(e){}};tick();AL=setInterval(tick,1100)}
